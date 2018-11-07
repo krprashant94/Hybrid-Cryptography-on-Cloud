@@ -93,15 +93,25 @@ Base64 encoding schemes are commonly used when there is a need to encode binary 
 
 ##### A Survey on Performance Analysis of DES, AES and RSA Algorithm along with LSB Substitution Technique:
 
-    Padmavathi, B. and S. Ranjitha Kumari. 
-    "A Survey on Performance Analysis of DES , AES and RSA Algorithm along with LSB Substitution Technique."
-    2013.
+> Padmavathi, B. and S. Ranjitha Kumari.
+>
+> "A Survey on Performance Analysis of DES , AES and RSA Algorithm along with LSB Substitution Technique."
+>
+> 2013.
 
 ###### pydes Project
-    [Pydes by RobinDavid](https://github.com/RobinDavid/pydes)
+
+> [Pydes by RobinDavid](https://github.com/RobinDavid/pydes)
 
     
 ##### Secure File storage in Cloud Computing using Hybrid Cryptography Algorithm
-    P. V. Maitri and A. Verma, "Secure file storage in cloud computing using hybrid cryptography algorithm," 2016 International Conference on Wireless Communications, Signal Processing and Networking (WiSPNET), Chennai, 2016, pp. 1635-1638.
-    doi: 10.1109/WiSPNET.2016.7566416
-    URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7566416&isnumber=7566075
+
+> P. V. Maitri and A. Verma, "Secure file storage in cloud computing using hybrid cryptography algorithm,"
+>
+> 2016 International Conference on Wireless Communications, Signal Processing and Networking (WiSPNET),
+>
+> Chennai, 2016, pp. 1635-1638.
+>
+> doi: 10.1109/WiSPNET.2016.7566416
+>
+> URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7566416&isnumber=7566075
