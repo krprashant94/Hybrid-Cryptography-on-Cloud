@@ -17,6 +17,11 @@ type `pip install securefile` to install this package in native python
 ## Uses
 
 ```python
+import time
+from securefile import Encrypt
+from securefile.keyset import RSA_KEY, DES_KEY, AES_KEY
+from securefile.secureserial import SerialPort
+
 ser = SerialPort()
 ser.scan()
 ser.open('COM3')
