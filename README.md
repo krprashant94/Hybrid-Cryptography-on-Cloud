@@ -95,9 +95,7 @@ Base64 encoding schemes are commonly used when there is a need to encode binary 
 
 > Padmavathi, B. and S. Ranjitha Kumari.
 >
-> "A Survey on Performance Analysis of DES , AES and RSA Algorithm along with LSB Substitution Technique."
->
-> 2013.
+> "A Survey on Performance Analysis of DES , AES and RSA Algorithm along with LSB Substitution Technique.", 2013.
 
 ##### pydes Project
 
