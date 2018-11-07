@@ -1,0 +1,518 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Support Functions &#8212; securefile relese documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="DES Algorithm Module" href="../des_algorithm.html" />
+    <link rel="prev" title="securefile.rsa_algorithm.RSA.decrypt" href="decrypt.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="support-functions">
+<h1>Support Functions<a class="headerlink" href="#support-functions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="securefile-aes-algorithm-aes">
+<h2>securefile.aes_algorithm.AES<a class="headerlink" href="#securefile-aes-algorithm-aes" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.Cipher">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">Cipher</code><span class="sig-paren">(</span><em>self</em>, <em>expandedKey</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#securefile.aes_algorithm.AES.Cipher" title="Permalink to this definition">¶</a></dt>
+<dd><p>At the start of the Cipher, the input is copied to the
+State Matrix. After an initial Round Key addition, the
+State Matrix is transformed by implementing a round function
+10, 12, or 14 times (depending on the key length), with the final
+round differing slightly from the first Nr -1 rounds. The final
+State Matrix is then copied as the output.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>expandedKey</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a>) – The expanded key schedule</li>
+<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – Hex string to encrypt</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Encrypted data as a Hex string</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.InvCipher">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">InvCipher</code><span class="sig-paren">(</span><em>self</em>, <em>expandedKey</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#securefile.aes_algorithm.AES.InvCipher" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.ExpandKey">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">ExpandKey</code><span class="sig-paren">(</span><em>self</em>, <em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#securefile.aes_algorithm.AES.ExpandKey" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes the Cipher Key and performs a Key Expansion routine to
+generate a key schedule thus generating a total of Nb (Nr + 1) words.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – 128, 192, 256 bit Cipher Key</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Expanded Cipher Keys</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.MixColumns">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">MixColumns</code><span class="sig-paren">(</span><em>self</em>, <em>state</em>, <em>isInv</em><span class="sig-paren">)</span><a class="headerlink" href="#securefile.aes_algorithm.AES.MixColumns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Operates on the State column-by-column, treating each column as
+a four-term polynomial. The columns are considered as polynomials
+over GF(2^8) and multiplied modulo x^4 + 1 with a fixed polynomial a(x).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>state</strong> – State Matrix input</li>
+<li><strong>isInv</strong> – Encrypt or decrypt mode</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.AddRoundKey">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">AddRoundKey</code><span class="sig-paren">(</span><em>state</em>, <em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#securefile.aes_algorithm.AES.AddRoundKey" title="Permalink to this definition">¶</a></dt>
+<dd><p>Round Key is added to the State using an XOR operation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>state</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a>) – State Matrix</li>
+<li><strong>key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a>) – Round Key</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Hex values of XOR operation</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.RevertStateMatrix">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">RevertStateMatrix</code><span class="sig-paren">(</span><em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#securefile.aes_algorithm.AES.RevertStateMatrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reverts State Matrix format as str</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>state</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a>) – Final State Matrix</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Reverted State Matrix</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.RotWord">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">RotWord</code><span class="sig-paren">(</span><em>word</em><span class="sig-paren">)</span><a class="headerlink" href="#securefile.aes_algorithm.AES.RotWord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes a word [a0, a1, a2, a3] as input and perform a
+cyclic permutation that returns the word [a1, a2, a3, a0].</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>word</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – Row within State Matrix</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Circular byte left shift</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.ShiftRows">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">ShiftRows</code><span class="sig-paren">(</span><em>self</em>, <em>state</em>, <em>isInv</em><span class="sig-paren">)</span><a class="headerlink" href="#securefile.aes_algorithm.AES.ShiftRows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes the State by cyclically shifting the last
+three rows of the State by different offsets.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>state</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a>) – State Matrix</li>
+<li><strong>isInv</strong> – Encrypt or Decrypt</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Shifted state by offsets [0, 1, 2, 3]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.StateMatrix">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">StateMatrix</code><span class="sig-paren">(</span><em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#securefile.aes_algorithm.AES.StateMatrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Formats a State Matrix str to a properly formatted list.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>state</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – String State Matrix</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Formatted State Matrix</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.SubBytes">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">SubBytes</code><span class="sig-paren">(</span><em>self</em>, <em>state</em>, <em>isInv</em><span class="sig-paren">)</span><a class="headerlink" href="#securefile.aes_algorithm.AES.SubBytes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transforms the State Matrix using a nonlinear byte S-box
+that operates on each of the State bytes independently.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>state</strong> – State matrix input</li>
+<li><strong>isInv</strong> – Encrypt or decrypt mode</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Byte substitution from the state matrix</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.SubWord">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">SubWord</code><span class="sig-paren">(</span><em>self</em>, <em>byte</em><span class="sig-paren">)</span><a class="headerlink" href="#securefile.aes_algorithm.AES.SubWord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Key Expansion routine that takes a four-byte
+input word and applies an S-box substitution.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>byte</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – Output from the circular byte left shift</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Substituted bytes through sbox</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.cbc">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">cbc</code><span class="sig-paren">(</span><em>self</em>, <em>data</em>, <em>expanded_key</em>, <em>isInv</em><span class="sig-paren">)</span><a class="headerlink" href="#securefile.aes_algorithm.AES.cbc" title="Permalink to this definition">¶</a></dt>
+<dd><p>CBC mode:
+In CBC mode, each block of plaintext is XORed with the
+previous ciphertext block before being encrypted.</p>
+<dl class="docutils">
+<dt>Denoted as:</dt>
+<dd>Encryption: Ci = Ek(Pi xor C(i-1)) and C0 = IV
+Decryption: Pi = Dk(Ci) xor C(i-1) and C0 = IV</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> – Data to be encrypted (type defined by input type)</li>
+<li><strong>expanded_key</strong> – The AES expanded key set</li>
+<li><strong>isInv</strong> – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Data as string or binary data (defined by output type)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.ecb">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">ecb</code><span class="sig-paren">(</span><em>self</em>, <em>data</em>, <em>expanded_key</em>, <em>isInv</em><span class="sig-paren">)</span><a class="headerlink" href="#securefile.aes_algorithm.AES.ecb" title="Permalink to this definition">¶</a></dt>
+<dd><p>ECB mode:
+The simplest of the encrypt modes is the Electronic
+Codebook (ECB) mode. The message is divided into blocks,
+and each block is encrypted separately.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>isInv</strong> – </li>
+<li><strong>data</strong> – Data to be encrypted (type defined by input type)</li>
+<li><strong>expanded_key</strong> – The AES expanded key set</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Data as string or binary data (defined by output type)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.galois">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">galois</code><span class="sig-paren">(</span><em>a</em>, <em>b</em><span class="sig-paren">)</span><a class="headerlink" href="#securefile.aes_algorithm.AES.galois" title="Permalink to this definition">¶</a></dt>
+<dd><p>Galois multiplication of 8 bit characters a and b</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>a</strong> – State Matrix col or row</li>
+<li><strong>b</strong> – Fixed number</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Galois field GF(2^8)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.key_handler">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">key_handler</code><span class="sig-paren">(</span><em>self</em>, <em>key</em>, <em>isInv</em><span class="sig-paren">)</span><a class="headerlink" href="#securefile.aes_algorithm.AES.key_handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the key length and sets Nb, Nk, Nr accordingly.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – 128, 192, 256 bit Cipher Key</li>
+<li><strong>isInv</strong> – Encrypt or decrypt mode</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Expanded Cipher Keys</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.pad">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">pad</code><span class="sig-paren">(</span><em>data</em>, <em>block=16</em><span class="sig-paren">)</span><a class="headerlink" href="#securefile.aes_algorithm.AES.pad" title="Permalink to this definition">¶</a></dt>
+<dd><p>Padding method for data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> – Data to pad</li>
+<li><strong>block</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – Block size</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Padded data</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.unblock">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">unblock</code><span class="sig-paren">(</span><em>data</em>, <em>size=16</em><span class="sig-paren">)</span><a class="headerlink" href="#securefile.aes_algorithm.AES.unblock" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unblock binary data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.7)"><em>bytes</em></a>) – Binary data to split into blocks</li>
+<li><strong>size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – Block size</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Blocked binary data</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.unpad">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">unpad</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#securefile.aes_algorithm.AES.unpad" title="Permalink to this definition">¶</a></dt>
+<dd><p>Un-Padding for data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> – Data to be un-padded</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Data with removed padding</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.xor">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">xor</code><span class="sig-paren">(</span><em>first</em>, <em>last</em><span class="sig-paren">)</span><a class="headerlink" href="#securefile.aes_algorithm.AES.xor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Xor method for CBC usage</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>first</strong> – first encrypted block</li>
+<li><strong>last</strong> – last encrypted block</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Xor output of two blocks</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">securefile</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=krprashant94&repo=Optical-Character-Recognition&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../encrypt.html">Encrypt Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rsa_algorithm.html">RSA Algorithm Module</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../aes_algorithm.html">AES Algorithm Module</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../aes_algorithm.html#advanced-encryption-standard-aes-algorithm">Advanced Encryption Standard (AES) Algorithm</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="aes.html">AES Class</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="encrypt.html">securefile.rsa_algorithm.RSA.encrypt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="decrypt.html">securefile.rsa_algorithm.RSA.decrypt</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Support Functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../des_algorithm.html">DES Algorithm Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../keyset.html">Keyset Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../secureserial.html">Secure Serial Modeule</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../aes_algorithm.html">AES Algorithm Module</a><ul>
+  <li><a href="aes.html">AES Class</a><ul>
+      <li>Previous: <a href="decrypt.html" title="previous chapter">securefile.rsa_algorithm.RSA.decrypt</a></li>
+      <li>Next: <a href="../des_algorithm.html" title="next chapter">DES Algorithm Module</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Prashant Kumar, Pamela Banerjee.
+      
+      |
+      <a href="../_sources/aes/other.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/krprashant94/Optical-Character-Recognition" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,236 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Encrypt Class &#8212; securefile relese documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Encrypt.open" href="enc/open.html" />
+    <link rel="prev" title="Secure File Encryption Algorithm" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="encrypt-class">
+<h1>Encrypt Class<a class="headerlink" href="#encrypt-class" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="securefile.Encrypt">
+<em class="property">class </em><code class="descclassname">securefile.</code><code class="descname">Encrypt</code><span class="sig-paren">(</span><em>file_name</em>, <em>delimiter=':'</em><span class="sig-paren">)</span><a class="headerlink" href="#securefile.Encrypt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encrypt is the center class for all the module it is a wrapper class for
+all encryption and decryption algorithm.</p>
+<p>Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">securefile</span> <span class="k">import</span> <span class="n">Encrypt</span>
+<span class="n">enc</span> <span class="o">=</span> <span class="n">Encrypt</span><span class="p">(</span><span class="s1">&#39;test.md&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Special Method:</th><td class="field-body"><ul class="first simple">
+<li><a class="reference internal" href="#securefile.Encrypt.__init__" title="securefile.Encrypt.__init__"><code class="xref py py-class docutils literal notranslate"><span class="pre">__init__()</span></code></a></li>
+<li><code class="xref py py-class docutils literal notranslate"><span class="pre">__open_check()</span></code></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Method:</th><td class="field-body"><ul class="first simple">
+<li><a class="reference internal" href="enc/open.html#securefile.Encrypt.open" title="securefile.Encrypt.open"><code class="xref py py-class docutils literal notranslate"><span class="pre">open()</span></code></a></li>
+<li><a class="reference internal" href="enc/close.html#securefile.Encrypt.close" title="securefile.Encrypt.close"><code class="xref py py-class docutils literal notranslate"><span class="pre">close()</span></code></a></li>
+<li><a class="reference internal" href="enc/create.html#securefile.Encrypt.create" title="securefile.Encrypt.create"><code class="xref py py-class docutils literal notranslate"><span class="pre">create()</span></code></a></li>
+<li><a class="reference internal" href="enc/commit.html#securefile.Encrypt.commit" title="securefile.Encrypt.commit"><code class="xref py py-class docutils literal notranslate"><span class="pre">commit()</span></code></a></li>
+<li><a class="reference internal" href="enc/des_enc.html#securefile.Encrypt.des_encrypt" title="securefile.Encrypt.des_encrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">des_encrypt()</span></code></a></li>
+<li><a class="reference internal" href="enc/des_dec.html#securefile.Encrypt.des_decrypt" title="securefile.Encrypt.des_decrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">des_decrypt()</span></code></a></li>
+<li><a class="reference internal" href="enc/caesar_cipher.html#securefile.Encrypt.caesar_cipher" title="securefile.Encrypt.caesar_cipher"><code class="xref py py-class docutils literal notranslate"><span class="pre">caesar_cipher()</span></code></a></li>
+<li><a class="reference internal" href="enc/caesar_decipher.html#securefile.Encrypt.caesar_decipher" title="securefile.Encrypt.caesar_decipher"><code class="xref py py-class docutils literal notranslate"><span class="pre">caesar_decipher()</span></code></a></li>
+<li><a class="reference internal" href="enc/rsa_enc.html#securefile.Encrypt.rsa_encrypt" title="securefile.Encrypt.rsa_encrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">rsa_encrypt()</span></code></a></li>
+<li><a class="reference internal" href="enc/rsa_dec.html#securefile.Encrypt.rsa_decrypt" title="securefile.Encrypt.rsa_decrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">rsa_decrypt()</span></code></a></li>
+<li><a class="reference internal" href="enc/aes_enc.html#securefile.Encrypt.aes_encrypt" title="securefile.Encrypt.aes_encrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">aes_encrypt()</span></code></a></li>
+<li><a class="reference internal" href="enc/aes_dec.html#securefile.Encrypt.aes_decrypt" title="securefile.Encrypt.aes_decrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">aes_decrypt()</span></code></a></li>
+<li><a class="reference internal" href="enc/base64_enc.html#securefile.Encrypt.base64_encrypt" title="securefile.Encrypt.base64_encrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">base64_encrypt()</span></code></a></li>
+<li><a class="reference internal" href="enc/base64_dec.html#securefile.Encrypt.base64_decrypt" title="securefile.Encrypt.base64_decrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">base64_decrypt()</span></code></a></li>
+<li><a class="reference internal" href="enc/get_text.html#securefile.Encrypt.get_text" title="securefile.Encrypt.get_text"><code class="xref py py-class docutils literal notranslate"><span class="pre">get_text()</span></code></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><ul class="first last simple">
+<li>__file_name</li>
+<li>__plain_text</li>
+<li>__open_flag</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="securefile.Encrypt.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>file_name</em>, <em>delimiter=':'</em><span class="sig-paren">)</span><a class="headerlink" href="#securefile.Encrypt.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encrypt class object takes two argument</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>file_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – file name with path that is going to encrypted or decrypted.</li>
+<li><strong>delimiter=':'</strong> (<em>chr</em>) – delimiter used to pack/split the bytes of file.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">None</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Methods:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enc/open.html">Encrypt.open</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enc/close.html">Encrypt.close</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enc/create.html">Encrypt.create</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enc/commit.html">Encrypt.commit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enc/des_enc.html">Encrypt.des_encrypt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enc/des_dec.html">Encrypt.des_decrypt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enc/caesar_cipher.html">Encrypt.caesar_cipher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enc/caesar_decipher.html">Encrypt.caesar_decipher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enc/rsa_enc.html">Encrypt.rsa_encrypt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enc/rsa_dec.html">Encrypt.rsa_decrypt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enc/aes_enc.html">Encrypt.aes_encrypt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enc/aes_dec.html">Encrypt.aes_decrypt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enc/base64_enc.html">Encrypt.base64_encrypt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enc/base64_dec.html">Encrypt.base64_decrypt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enc/get_text.html">Encrypt.get_text</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">securefile</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=krprashant94&repo=Optical-Character-Recognition&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Encrypt Class</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enc/open.html">Encrypt.open</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enc/close.html">Encrypt.close</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enc/create.html">Encrypt.create</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enc/commit.html">Encrypt.commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enc/des_enc.html">Encrypt.des_encrypt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enc/des_dec.html">Encrypt.des_decrypt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enc/caesar_cipher.html">Encrypt.caesar_cipher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enc/caesar_decipher.html">Encrypt.caesar_decipher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enc/rsa_enc.html">Encrypt.rsa_encrypt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enc/rsa_dec.html">Encrypt.rsa_decrypt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enc/aes_enc.html">Encrypt.aes_encrypt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enc/aes_dec.html">Encrypt.aes_decrypt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enc/base64_enc.html">Encrypt.base64_encrypt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enc/base64_dec.html">Encrypt.base64_decrypt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enc/get_text.html">Encrypt.get_text</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rsa_algorithm.html">RSA Algorithm Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aes_algorithm.html">AES Algorithm Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="des_algorithm.html">DES Algorithm Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keyset.html">Keyset Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="secureserial.html">Secure Serial Modeule</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Secure File Encryption Algorithm</a></li>
+      <li>Next: <a href="enc/open.html" title="next chapter">Encrypt.open</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Prashant Kumar, Pamela Banerjee.
+      
+      |
+      <a href="_sources/encrypt.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/krprashant94/Optical-Character-Recognition" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,272 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>RSA Key Class &#8212; securefile relese documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="DES Key Class" href="des.html" />
+    <link rel="prev" title="Keyset Module" href="../keyset.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="rsa-key-class">
+<h1>RSA Key Class<a class="headerlink" href="#rsa-key-class" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="securefile.keyset.RSA_KEY">
+<em class="property">class </em><code class="descclassname">securefile.keyset.</code><code class="descname">RSA_KEY</code><span class="sig-paren">(</span><em>public</em>, <em>private</em><span class="sig-paren">)</span><a class="headerlink" href="#securefile.keyset.RSA_KEY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rivest–Shamir–Adleman (RSA) Algorithm key object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Method:</th><td class="field-body"><ul class="first simple">
+<li><a class="reference internal" href="#securefile.keyset.RSA_KEY.genrate" title="securefile.keyset.RSA_KEY.genrate"><code class="xref py py-class docutils literal notranslate"><span class="pre">genrate()</span></code></a></li>
+<li><a class="reference internal" href="#securefile.keyset.RSA_KEY.public_key_genrate" title="securefile.keyset.RSA_KEY.public_key_genrate"><code class="xref py py-class docutils literal notranslate"><span class="pre">public_key_genrate()</span></code></a></li>
+<li><a class="reference internal" href="#securefile.keyset.RSA_KEY.private_key_genrate" title="securefile.keyset.RSA_KEY.private_key_genrate"><code class="xref py py-class docutils literal notranslate"><span class="pre">private_key_genrate()</span></code></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attributes:</th><td class="field-body"><ul class="first last simple">
+<li>public_key</li>
+<li>private_key</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="securefile.keyset.RSA_KEY.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>public</em>, <em>private</em><span class="sig-paren">)</span><a class="headerlink" href="#securefile.keyset.RSA_KEY.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initlize the class</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>public</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.7)"><em>tuple</em></a>) – public key tuple, like (a, b)</li>
+<li><strong>private</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.7)"><em>tuple</em></a>) – private key tuple, like (a, b)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">None</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="securefile.keyset.RSA_KEY.genrate">
+<em class="property">static </em><code class="descname">genrate</code><span class="sig-paren">(</span><em>prime_one</em>, <em>prime_two</em><span class="sig-paren">)</span><a class="headerlink" href="#securefile.keyset.RSA_KEY.genrate" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>&#64;staticmethod</em></p>
+<p>Genrate a public key and private key pair from a given prime numberi</p>
+<p>Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">RSA_KEY</span><span class="o">.</span><span class="n">genrate</span><span class="p">(</span><span class="mi">149</span><span class="p">,</span> <span class="mi">383</span><span class="p">))</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>prime_one</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – First prime number for RSA key. (Must be a prime number)</li>
+<li><strong>prime_two</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – Second prime number for RSA key. (Must be a prime number)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#securefile.keyset.RSA_KEY" title="securefile.keyset.RSA_KEY"><code class="xref py py-class docutils literal notranslate"><span class="pre">RSA_KEY</span></code></a> public and private key pair object</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.7)"><strong>ValueError</strong></a> – Both numbers must be prime.</li>
+<li><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.7)"><strong>ValueError</strong></a> – p and q cannot be equal in RSA key</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="securefile.keyset.RSA_KEY.private_key_genrate">
+<em class="property">static </em><code class="descname">private_key_genrate</code><span class="sig-paren">(</span><em>key1</em>, <em>key2</em><span class="sig-paren">)</span><a class="headerlink" href="#securefile.keyset.RSA_KEY.private_key_genrate" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>&#64;staticmethod</em></p>
+<p>Genrate a private key pair from a given key tuple</p>
+<p>Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">RSA_KEY</span><span class="o">.</span><span class="n">private_key_genrate</span><span class="p">(</span><span class="mi">6861</span><span class="p">,</span> <span class="mi">57067</span><span class="p">))</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>key1</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – First tuple of private key.</li>
+<li><strong>key2</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – Second tuple of private key.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#securefile.keyset.RSA_KEY" title="securefile.keyset.RSA_KEY"><code class="xref py py-class docutils literal notranslate"><span class="pre">RSA_KEY</span></code></a> Private key object</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="securefile.keyset.RSA_KEY.public_key_genrate">
+<em class="property">static </em><code class="descname">public_key_genrate</code><span class="sig-paren">(</span><em>key1</em>, <em>key2</em><span class="sig-paren">)</span><a class="headerlink" href="#securefile.keyset.RSA_KEY.public_key_genrate" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>&#64;staticmethod</em></p>
+<p>Genrate a public key pair from a given key tuple</p>
+<p>Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">RSA_KEY</span><span class="o">.</span><span class="n">public_key_genrate</span><span class="p">(</span><span class="mi">18285</span><span class="p">,</span> <span class="mi">57067</span><span class="p">))</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>key1</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – First tuple of public key.</li>
+<li><strong>key2</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – Second tuple of public key.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="#securefile.keyset.RSA_KEY" title="securefile.keyset.RSA_KEY"><code class="xref py py-class docutils literal notranslate"><span class="pre">RSA_KEY</span></code></a> Public key object</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">securefile</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=krprashant94&repo=Optical-Character-Recognition&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../encrypt.html">Encrypt Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rsa_algorithm.html">RSA Algorithm Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aes_algorithm.html">AES Algorithm Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../des_algorithm.html">DES Algorithm Module</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../keyset.html">Keyset Module</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../keyset.html#keyset">keyset</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">RSA Key Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="des.html">DES Key Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aes.html">AES Key Class</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../secureserial.html">Secure Serial Modeule</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../keyset.html">Keyset Module</a><ul>
+      <li>Previous: <a href="../keyset.html" title="previous chapter">Keyset Module</a></li>
+      <li>Next: <a href="des.html" title="next chapter">DES Key Class</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Prashant Kumar, Pamela Banerjee.
+      
+      |
+      <a href="../_sources/keyset/rsa.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/krprashant94/Optical-Character-Recognition" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>

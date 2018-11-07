@@ -8,6 +8,8 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+paper/
+sphinx/
 build/
 develop-eggs/
 dist/
@@ -38,6 +40,7 @@ pip-delete-this-directory.txt
 # Unit test / coverage reports
 htmlcov/
 .tox/
+.nox/
 .coverage
 .coverage.*
 .cache
@@ -72,6 +75,10 @@ target/
 # Jupyter Notebook
 .ipynb_checkpoints
 
+# IPython
+profile_default/
+ipython_config.py
+
 # pyenv
 .python-version
 
@@ -102,3 +109,5 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+.dmypy.json
+dmypy.json

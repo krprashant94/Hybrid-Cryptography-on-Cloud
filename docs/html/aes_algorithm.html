@@ -1,0 +1,171 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>AES Algorithm Module &#8212; securefile relese documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="AES Class" href="aes/aes.html" />
+    <link rel="prev" title="Support Functions" href="rsa/other.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-securefile.aes_algorithm">
+<span id="aes-algorithm-module"></span><h1>AES Algorithm Module<a class="headerlink" href="#module-securefile.aes_algorithm" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="advanced-encryption-standard-aes-algorithm">
+<h2>Advanced Encryption Standard (AES) Algorithm<a class="headerlink" href="#advanced-encryption-standard-aes-algorithm" title="Permalink to this headline">¶</a></h2>
+<p>The more popular and widely adopted symmetric encrypt algorithm
+likely to be encountered nowadays is the Advanced Encryption
+Standard (AES). It is found at least six time faster than triple DES.</p>
+<p>A replacement for DES was needed as its key size was too small.
+With increasing computing power, it was considered vulnerable
+against exhaustive key search attack. Triple DES was designed
+to overcome this drawback but it was found slow.</p>
+<p>The Advanced Encryption Standard (AES), also known by its original
+name Rijndael, is a specification for the encrypt of electronic
+data established by the U.S. National Institute of Standards and
+Technology (NIST) in 2001. AES is a subset of the Rijndael cipher
+developed by two Belgian cryptographers, Joan Daemen and Vincent
+Rijmen, who submitted a proposal to NIST during the AES selection
+process. Rijndael is a family of ciphers with different key
+and block sizes.</p>
+<dl class="docutils">
+<dt>The features of AES are as follows:</dt>
+<dd><ul class="first last simple">
+<li>Symmetric key symmetric block cipher</li>
+<li>128-bit data, 128/192/256-bit keys</li>
+<li>Stronger and faster than Triple-DES</li>
+<li>Provide full specification and design details</li>
+<li>Software implementable in C and Java</li>
+</ul>
+</dd>
+<dt>Example ::</dt>
+<dd>import securefile.aes_algorithm as aes_algo</dd>
+</dl>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Module Class:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aes/aes.html">AES Class</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="aes/encrypt.html">securefile.rsa_algorithm.RSA.encrypt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aes/decrypt.html">securefile.rsa_algorithm.RSA.decrypt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aes/other.html">Support Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">securefile</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=krprashant94&repo=Optical-Character-Recognition&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="encrypt.html">Encrypt Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rsa_algorithm.html">RSA Algorithm Module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">AES Algorithm Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#advanced-encryption-standard-aes-algorithm">Advanced Encryption Standard (AES) Algorithm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aes/aes.html">AES Class</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="des_algorithm.html">DES Algorithm Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keyset.html">Keyset Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="secureserial.html">Secure Serial Modeule</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="rsa/other.html" title="previous chapter">Support Functions</a></li>
+      <li>Next: <a href="aes/aes.html" title="next chapter">AES Class</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Prashant Kumar, Pamela Banerjee.
+      
+      |
+      <a href="_sources/aes_algorithm.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/krprashant94/Optical-Character-Recognition" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>

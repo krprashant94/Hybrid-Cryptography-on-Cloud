@@ -1,0 +1,169 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Keyset Module &#8212; securefile relese documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="RSA Key Class" href="keyset/rsa.html" />
+    <link rel="prev" title="Support Functions" href="des/other.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-securefile.keyset">
+<span id="keyset-module"></span><h1>Keyset Module<a class="headerlink" href="#module-securefile.keyset" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="keyset">
+<h2>keyset<a class="headerlink" href="#keyset" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>A module for all key object. it provide following key object at one:</dt>
+<dd><ul class="first last simple">
+<li>DES key</li>
+<li>AES Key</li>
+<li>RSA Key</li>
+</ul>
+</dd>
+</dl>
+<p><strong>Uses</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">securefile.keyset</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt><strong>Module Structure</strong>:</dt>
+<dd><div class="graphviz"><img src="_images/graphviz-b81706120135ce0f1adee2d236848c235285bb99.png" alt="digraph foo {
+    &quot;KeySet Module&quot; -&gt; &quot;RSA_KEY&quot;
+    &quot;KeySet Module&quot; -&gt; &quot;AES_KEY&quot;
+    &quot;KeySet Module&quot; -&gt; &quot;DES_KEY&quot;
+
+    &quot;KeySet Module&quot;[shape=ractangle]
+    &quot;RSA_KEY&quot;[shape=ractangle]
+    &quot;AES_KEY&quot;[shape=ractangle]
+    &quot;DES_KEY&quot;[shape=ractangle]
+}" class="graphviz" /></div>
+</dd>
+</dl>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Module Classes:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="keyset/rsa.html">RSA Key Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keyset/des.html">DES Key Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keyset/aes.html">AES Key Class</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">securefile</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=krprashant94&repo=Optical-Character-Recognition&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="encrypt.html">Encrypt Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rsa_algorithm.html">RSA Algorithm Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aes_algorithm.html">AES Algorithm Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="des_algorithm.html">DES Algorithm Module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Keyset Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#keyset">keyset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="keyset/rsa.html">RSA Key Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="keyset/des.html">DES Key Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="keyset/aes.html">AES Key Class</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="secureserial.html">Secure Serial Modeule</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="des/other.html" title="previous chapter">Support Functions</a></li>
+      <li>Next: <a href="keyset/rsa.html" title="next chapter">RSA Key Class</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Prashant Kumar, Pamela Banerjee.
+      
+      |
+      <a href="_sources/keyset.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/krprashant94/Optical-Character-Recognition" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>
