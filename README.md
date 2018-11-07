@@ -1,11 +1,16 @@
 # Hybrid Cryptography on Cloud
 
-Hybrid Cryptography on Cloud
+A python package for hybrid file encryption and decryption. securefile is for n-layer file encryption. This package provides a basic two-way encryption algorithm for a file. It supports approximately all kind of file encoding. The package provides RSA, DES, AES and Shift Cipher and base64 algorithm for file encoding and decoding.
+
+[Full Documantaion](https://www.sixpetal.com/securefile)
+
 
 ## Installation
-##### Serial Port communication
- - For native python `pip install pyserial`
- - For anaconda distrubution `conda install -c anaconda pyserial`
+type `pip install securefile` to install this package in native python
+
+##### Dependency
+ - pyserial (use `pip install pyserial` for native python or `conda install -c anaconda pyserial` for anaconda python)
+
 
 
 ## Data Encryption Standard (DES) Algorithm
