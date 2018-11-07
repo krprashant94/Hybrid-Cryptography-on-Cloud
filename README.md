@@ -87,18 +87,16 @@ Base64 encoding schemes are commonly used when there is a need to encode binary 
 ## Cite
 
 ##### A Survey on Performance Analysis of DES, AES and RSA Algorithm along with LSB Substitution Technique:
-```
-Padmavathi, B. and S. Ranjitha Kumari. 
-"A Survey on Performance Analysis of DES , AES and RSA Algorithm along with LSB Substitution Technique."
-2013.
-``` 
-###### pydes Project
-[Pydes by RobinDavid](https://github.com/RobinDavid/pydes)
 
-##### A study of DES and Blowfish encryption algorithm:
-```
-T. Nie and T. Zhang, "A study of DES and Blowfish encryption algorithm," TENCON 2009 - 2009 IEEE Region 10 Conference, Singapore, 2009, pp. 1-4.    
-doi: 10.1109/TENCON.2009.5396115    
-keywords: {cryptography;Blowfish encryption algorithm;data security;information security systems;DES;Data security;Public key;Information security;Algorithm design and analysis;Personal digital assistants;Public key cryptography;Data engineering;IP networks;Communication system security;Mobile computing;Encryption Algorithm;DES;Blowfish},
-URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5396115&isnumber=5395786
-```
+    Padmavathi, B. and S. Ranjitha Kumari. 
+    "A Survey on Performance Analysis of DES , AES and RSA Algorithm along with LSB Substitution Technique."
+    2013.
+
+###### pydes Project
+    [Pydes by RobinDavid](https://github.com/RobinDavid/pydes)
+
+    
+##### Secure File storage in Cloud Computing using Hybrid Cryptography Algorithm
+    P. V. Maitri and A. Verma, "Secure file storage in cloud computing using hybrid cryptography algorithm," 2016 International Conference on Wireless Communications, Signal Processing and Networking (WiSPNET), Chennai, 2016, pp. 1635-1638.
+    doi: 10.1109/WiSPNET.2016.7566416
+    URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7566416&isnumber=7566075
