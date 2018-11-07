@@ -13,10 +13,8 @@ type `pip install securefile` to install this package in native python
 
 
 
-## Data Encryption Standard (DES) Algorithm
-The Data Encryption Standard (DES) is a symmetric-key block cipher published by the National Institute of Standards and Technology (NIST). DES is an implementation of a Feistel Cipher.
 
-[Pydes](https://github.com/RobinDavid/pydes)
+## Uses
 
 ```python
 e = Encrypt('test.md', '1234567812345678')
@@ -33,12 +31,34 @@ Cipher Text:
 Orignal Text:
 TEST STRING
 ```
+
+## Wiki
+
+#### Data Encryption Standard (DES) Algorithm
+
+The Data Encryption Standard (DES) is a symmetric-key block cipher published by the National Institute of Standards and Technology (NIST). DES is an implementation of a Feistel Cipher. It uses 16 round Feistel structure. The block size is 64-bit. Though, key length is 64-bit, DES has an effective key length of 56 bits, since 8 of the 64 bits of the key are not used by the encryption algorithm.
+
+#### RSA Algorithm
+
+RSA algorithm is a public key encryption technique and is considered as the most secure way of encryption.
+RSA algorithm is asymmetric cryptography algorithm. Asymmetric actually means that it works on two different keys i.e. Public Key and Private Key. As the name describes that the Public Key is given to everyone and Private key is kept private.
+
+#### Advanced Encryption Standard (AES) Algorithm
+
+The more popular and widely adopted symmetric encrypt algorithm likely to be encountered nowadays is the Advanced Encryption Standard (AES). It is found at least six time faster than triple DES.
+A replacement for DES was needed as its key size was too small. With increasing computing power, it was considered vulnerable against exhaustive key search attack. Triple DES was designed to overcome this drawback but it was found slow.
+
+#### Base64
+
+Base64 encoding schemes are commonly used when there is a need to encode binary data that needs be stored and transferred over media that are designed to deal with textual data. This is to ensure that the data remains intact without modification during transport.
+
 ## Cite
 
 ##### A Survey on Performance Analysis of DES, AES and RSA Algorithm along with LSB Substitution Technique:
 ```
 Padmavathi, B. and S. Ranjitha Kumari. "A Survey on Performance Analysis of DES , AES and RSA Algorithm along with LSB Substitution Technique." (2013).
 ``` 
+###### [Pydes](https://github.com/RobinDavid/pydes)
 
 ##### A study of DES and Blowfish encryption algorithm:
 ```
