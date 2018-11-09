@@ -4,7 +4,7 @@ A python package for hybrid file encryption and decryption. securefile is for n-
 
 [Full Documantaion](https://www.sixpetal.com/securefile)
 [Python](https://pypi.org/project/securefile)
-
+[GitHub](https://krprashant94.github.io/Hybrid-Cryptography-on-Cloud)
 
 ## Installation
 type `pip install securefile` to install this package in native python
