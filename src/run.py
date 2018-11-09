@@ -53,7 +53,7 @@ def main():
     print("--- %s seconds ---" % (decode_time))
     
     with open("cipher.csv", "a", encoding="utf8") as file:
-        file.write(str(len(enc.get_text())) + ','+ str(encode_time) + ','+ str(decode_time) + ",\n")
+        file.write(str(len(enc.get_text())) + ','+ str(encode_time) + ','+ str(decode_time) + "\n")
         file.close()
 
     enc.close()
