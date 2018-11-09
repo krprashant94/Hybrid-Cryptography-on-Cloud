@@ -9,7 +9,6 @@ __pycache__/
 # Distribution / packaging
 .Python
 paper/
-sphinx/
 build/
 develop-eggs/
 dist/
