@@ -21,9 +21,6 @@ def main():
     ser.open('COM3')
     arduino_key = ser.read_key(console_log=True)
     ser.close()
-    
-    print(arduino_key.rsa_tuple)
-  
 
     des_key = DES_KEY.genrate(arduino_key.des_key)
     aes_key = AES_KEY.genrate(arduino_key.aes_key)
@@ -38,25 +35,25 @@ def main():
     start_time = time.time()
     
     enc.base64_encrypt()
-    enc.aes_encrypt(aes_key, commit=True)
-    enc.des_encrypt(des_key, commit=True)
-    enc.rsa_encrypt(rsa_private_key, commit=True)
-    enc.caesar_cipher(key_shift=chiper_shift, commit=True)
+    enc.aes_encrypt(aes_key, commit=False)
+    enc.des_encrypt(des_key, commit=False)
+    enc.rsa_encrypt(rsa_private_key, commit=False)
+    enc.caesar_cipher(key_shift=chiper_shift, commit=False)
     
     encode_time = time.time() - start_time
     print("--- %s seconds ---" % str(encode_time))
 
-    enc.caesar_decipher(key_shift=chiper_shift, commit=True)
-    enc.rsa_decrypt(rsa_public_key, commit=True)
-    enc.des_decrypt(des_key, commit=True)
-    enc.aes_decrypt(aes_key, commit=True)
+    enc.caesar_decipher(key_shift=chiper_shift, commit=False)
+    enc.rsa_decrypt(rsa_public_key, commit=False)
+    enc.des_decrypt(des_key, commit=False)
+    enc.aes_decrypt(aes_key, commit=False)
     enc.base64_decrypt(commit=True)
     
     decode_time = time.time() - start_time
     print("--- %s seconds ---" % (decode_time))
     
     with open("cipher.csv", "a", encoding="utf8") as file:
-        file.write(str(len(enc.get_text())) + ','+ str(encode_time) + ','+ str(decode_time) + ",\n")
+        file.write(str(len(enc.get_text())) + ','+ str(encode_time) + ','+ str(decode_time) + "\n")
         file.close()
 
     enc.close()

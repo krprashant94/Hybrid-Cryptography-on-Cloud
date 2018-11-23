@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>Encrypt.rsa_decrypt</title>
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" /> 
+  </head><body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="encrypt-rsa-decrypt">
+<h1>Encrypt.rsa_decrypt</h1>
+<dl class="function">
+<dt id="securefile.Encrypt.rsa_decrypt">
+<code class="descclassname">securefile.Encrypt.</code><code class="descname">rsa_decrypt</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Decrypt a cipher text into plain text.
+( <a class="reference internal" href="rsa_enc.xhtml#securefile.Encrypt.rsa_encrypt" title="securefile.Encrypt.rsa_encrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">rsa_encrypt</span></code></a> )</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+<span class="n">enc</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
+<span class="n">enc</span><span class="o">.</span><span class="n">rsa_decrypt</span><span class="p">(</span><span class="n">rsa_public_key</span><span class="p">,</span> <span class="n">commit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">enc</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<a class="reference internal" href="../keyset/rsa.xhtml#securefile.keyset.RSA_KEY" title="securefile.keyset.RSA_KEY"><em>RSA_KEY</em></a>) -- Encryption key.</p></li>
+<li><p><strong>commit=False</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a><span class="link-target"> [https://docs.python.org/3/library/functions.html#bool]</span>) -- Save the change or not.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Decrypted Message or Plain Text.</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p>TypeError - Text is not valid RSA string. Decode failed.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Decryption of RSA cipher text may take more time then encryption</p>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

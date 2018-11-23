@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>DES Algorithm Module</title>
+    <link rel="stylesheet" href="_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" /> 
+  </head><body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-securefile.des_algorithm">
+<span id="des-algorithm-module"></span><h1>DES Algorithm Module</h1>
+<div class="section" id="data-encryption-standard-des-algorithm">
+<h2>Data Encryption Standard (DES) Algorithm</h2>
+<p>The Data Encryption Standard (DES) is a symmetric-key block cipher published by
+the National Institute of Standards and Technology (NIST).
+DES is an implementation of a Feistel Cipher.
+It uses 16 round Feistel structure.
+The block size is 64-bit. Though, key length is 64-bit,
+DES has an effective key length of 56 bits, since 8 of the 64 bits
+of the key are not used by the encryption algorithm
+(function as check bits only).</p>
+<p><a class="reference external" href="https://github.com/RobinDavid/pydes">Pydes</a><span class="link-target"> [https://github.com/RobinDavid/pydes]</span></p>
+<p>Example Code</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;12345678&quot;</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Hello wo11&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ciphered: &quot;</span><span class="p">,</span> <span class="n">encrypt</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">text</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Deciphered: &quot;</span><span class="p">,</span> <span class="n">decrypt</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">encrypt</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">text</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p>Output</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Ciphered</span><span class="p">:</span>  <span class="c1">#####</span>
+<span class="n">Deciphered</span><span class="p">:</span>  <span class="n">Hello</span> <span class="n">wo11</span>
+</pre></div>
+</div>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Module Classes:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="des/des.xhtml">DES Algorithm Class</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="des/encrypt.xhtml">securefile.des_algorithm.DES.encrypt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="des/decrypt.xhtml">securefile.des_algorithm.DES.decrypt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="des/other.xhtml">Support Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

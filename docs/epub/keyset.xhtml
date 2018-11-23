@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>Keyset Module</title>
+    <link rel="stylesheet" href="_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" /> 
+  </head><body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-securefile.keyset">
+<span id="keyset-module"></span><h1>Keyset Module</h1>
+<div class="section" id="keyset">
+<h2>keyset</h2>
+<dl class="simple">
+<dt>A module for all key object. it provide following key object at one:</dt>
+<dd><ul class="simple">
+<li><p>DES key</p></li>
+<li><p>AES Key</p></li>
+<li><p>RSA Key</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>Uses</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">securefile.keyset</span>
+</pre></div>
+</div>
+<dl>
+<dt><strong>Module Structure</strong>:</dt>
+<dd><div class="graphviz"><img src="_images/graphviz-b81706120135ce0f1adee2d236848c235285bb99.png" alt="digraph foo {
+    &quot;KeySet Module&quot; -&gt; &quot;RSA_KEY&quot;
+    &quot;KeySet Module&quot; -&gt; &quot;AES_KEY&quot;
+    &quot;KeySet Module&quot; -&gt; &quot;DES_KEY&quot;
+
+    &quot;KeySet Module&quot;[shape=ractangle]
+    &quot;RSA_KEY&quot;[shape=ractangle]
+    &quot;AES_KEY&quot;[shape=ractangle]
+    &quot;DES_KEY&quot;[shape=ractangle]
+}" class="graphviz" /></div>
+</dd>
+</dl>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Module Classes:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="keyset/rsa.xhtml">RSA Key Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keyset/des.xhtml">DES Key Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keyset/aes.xhtml">AES Key Class</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

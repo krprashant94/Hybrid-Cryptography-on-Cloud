@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>RSA Key Class</title>
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" /> 
+  </head><body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="rsa-key-class">
+<h1>RSA Key Class</h1>
+<dl class="class">
+<dt id="securefile.keyset.RSA_KEY">
+<em class="property">class </em><code class="descclassname">securefile.keyset.</code><code class="descname">RSA_KEY</code><span class="sig-paren">(</span><em>public</em>, <em>private</em><span class="sig-paren">)</span></dt>
+<dd><p>Rivest–Shamir–Adleman (RSA) Algorithm key object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Method</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#securefile.keyset.RSA_KEY.genrate" title="securefile.keyset.RSA_KEY.genrate"><code class="xref py py-class docutils literal notranslate"><span class="pre">genrate()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#securefile.keyset.RSA_KEY.public_key_genrate" title="securefile.keyset.RSA_KEY.public_key_genrate"><code class="xref py py-class docutils literal notranslate"><span class="pre">public_key_genrate()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#securefile.keyset.RSA_KEY.private_key_genrate" title="securefile.keyset.RSA_KEY.private_key_genrate"><code class="xref py py-class docutils literal notranslate"><span class="pre">private_key_genrate()</span></code></a></p></li>
+</ul>
+</dd>
+<dt class="field-even">Attributes</dt>
+<dd class="field-even"><ul class="simple">
+<li><p>public_key</p></li>
+<li><p>private_key</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="securefile.keyset.RSA_KEY.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>public</em>, <em>private</em><span class="sig-paren">)</span></dt>
+<dd><p>Initlize the class</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>public</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.7)"><em>tuple</em></a><span class="link-target"> [https://docs.python.org/3/library/stdtypes.html#tuple]</span>) -- public key tuple, like (a, b)</p></li>
+<li><p><strong>private</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.7)"><em>tuple</em></a><span class="link-target"> [https://docs.python.org/3/library/stdtypes.html#tuple]</span>) -- private key tuple, like (a, b)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="securefile.keyset.RSA_KEY.genrate">
+<em class="property">static </em><code class="descname">genrate</code><span class="sig-paren">(</span><em>prime_one</em>, <em>prime_two</em><span class="sig-paren">)</span></dt>
+<dd><p><em>&#64;staticmethod</em></p>
+<p>Genrate a public key and private key pair from a given prime numberi</p>
+<p>Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">RSA_KEY</span><span class="o">.</span><span class="n">genrate</span><span class="p">(</span><span class="mi">149</span><span class="p">,</span> <span class="mi">383</span><span class="p">))</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>prime_one</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a><span class="link-target"> [https://docs.python.org/3/library/functions.html#int]</span>) -- First prime number for RSA key. (Must be a prime number)</p></li>
+<li><p><strong>prime_two</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a><span class="link-target"> [https://docs.python.org/3/library/functions.html#int]</span>) -- Second prime number for RSA key. (Must be a prime number)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference internal" href="#securefile.keyset.RSA_KEY" title="securefile.keyset.RSA_KEY"><code class="xref py py-class docutils literal notranslate"><span class="pre">RSA_KEY</span></code></a> public and private key pair object</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.7)"><strong>ValueError</strong></a><span class="link-target"> [https://docs.python.org/3/library/exceptions.html#ValueError]</span> -- Both numbers must be prime.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.7)"><strong>ValueError</strong></a><span class="link-target"> [https://docs.python.org/3/library/exceptions.html#ValueError]</span> -- p and q cannot be equal in RSA key</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="securefile.keyset.RSA_KEY.private_key_genrate">
+<em class="property">static </em><code class="descname">private_key_genrate</code><span class="sig-paren">(</span><em>key1</em>, <em>key2</em><span class="sig-paren">)</span></dt>
+<dd><p><em>&#64;staticmethod</em></p>
+<p>Genrate a private key pair from a given key tuple</p>
+<p>Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">RSA_KEY</span><span class="o">.</span><span class="n">private_key_genrate</span><span class="p">(</span><span class="mi">6861</span><span class="p">,</span> <span class="mi">57067</span><span class="p">))</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key1</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a><span class="link-target"> [https://docs.python.org/3/library/functions.html#int]</span>) -- First tuple of private key.</p></li>
+<li><p><strong>key2</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a><span class="link-target"> [https://docs.python.org/3/library/functions.html#int]</span>) -- Second tuple of private key.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference internal" href="#securefile.keyset.RSA_KEY" title="securefile.keyset.RSA_KEY"><code class="xref py py-class docutils literal notranslate"><span class="pre">RSA_KEY</span></code></a> Private key object</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="securefile.keyset.RSA_KEY.public_key_genrate">
+<em class="property">static </em><code class="descname">public_key_genrate</code><span class="sig-paren">(</span><em>key1</em>, <em>key2</em><span class="sig-paren">)</span></dt>
+<dd><p><em>&#64;staticmethod</em></p>
+<p>Genrate a public key pair from a given key tuple</p>
+<p>Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">RSA_KEY</span><span class="o">.</span><span class="n">public_key_genrate</span><span class="p">(</span><span class="mi">18285</span><span class="p">,</span> <span class="mi">57067</span><span class="p">))</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key1</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a><span class="link-target"> [https://docs.python.org/3/library/functions.html#int]</span>) -- First tuple of public key.</p></li>
+<li><p><strong>key2</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a><span class="link-target"> [https://docs.python.org/3/library/functions.html#int]</span>) -- Second tuple of public key.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference internal" href="#securefile.keyset.RSA_KEY" title="securefile.keyset.RSA_KEY"><code class="xref py py-class docutils literal notranslate"><span class="pre">RSA_KEY</span></code></a> Public key object</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

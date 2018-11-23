@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>AES Class</title>
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" /> 
+  </head><body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="aes-class">
+<h1>AES Class</h1>
+<dl class="class">
+<dt id="securefile.aes_algorithm.AES">
+<em class="property">class </em><code class="descclassname">securefile.aes_algorithm.</code><code class="descname">AES</code><span class="sig-paren">(</span><em>mode</em>, <em>input_type</em>, <em>iv=None</em><span class="sig-paren">)</span></dt>
+<dd><p>Instructions for my AES implication</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aes</span> <span class="o">=</span> <span class="n">AES</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;ecb&#39;</span><span class="p">,</span> <span class="n">input_type</span><span class="o">=</span><span class="s1">&#39;hex&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Test vector 128-bit key</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;000102030405060708090a0b0c0d0e0f&#39;</span>
+</pre></div>
+</div>
+<p>Encrypt data with your key</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cyphertext</span> <span class="o">=</span> <span class="n">aes</span><span class="o">.</span><span class="n">encrypt</span><span class="p">(</span><span class="s1">&#39;00112233445566778899aabbccddeeff&#39;</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Decrypt data with the same key</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plaintext</span> <span class="o">=</span> <span class="n">aes</span><span class="o">.</span><span class="n">decrypt</span><span class="p">(</span><span class="n">cyphertext</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="securefile.aes_algorithm.AES.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mode</strong> (<em>exb|cbc</em>) -- mode</p></li>
+<li><p><strong>input_type</strong> (<em>text|hex|binary|data</em>) -- type of input</p></li>
+<li><p><strong>iv</strong> (<em>text</em>) -- iv</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Module Class:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encrypt.xhtml">securefile.rsa_algorithm.RSA.encrypt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="decrypt.xhtml">securefile.rsa_algorithm.RSA.decrypt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other.xhtml">Support Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="other.xhtml#securefile-aes-algorithm-aes">securefile.aes_algorithm.AES</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

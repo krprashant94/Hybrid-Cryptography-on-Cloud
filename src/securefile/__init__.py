@@ -246,7 +246,7 @@ class Encrypt:
         """
         commit()
         -----------
-        Save current progress in the woring file. (Commit the changes)
+        Save current progress in the working file. (Commit the changes)
 
         :returns bool: True if successfully saved otherwise raise exception
         :raises: File exception on error

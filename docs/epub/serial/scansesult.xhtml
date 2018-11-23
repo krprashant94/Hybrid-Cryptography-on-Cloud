@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>Scanresult</title>
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" /> 
+  </head><body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-securefile.secureserial.ScanResult">
+<span id="scanresult"></span><h1>Scanresult</h1>
+<p>A class for decrypting and stroing the key which is recived
+from serial port.</p>
+<dl class="function">
+<dt id="securefile.secureserial.ScanResult.__init__">
+<code class="descclassname">securefile.secureserial.ScanResult.</code><code class="descname">__init__</code><span class="sig-paren">(</span><em>self</em>, <em>scan</em><span class="sig-paren">)</span></dt>
+<dd><p>Recived String from Hardware Key</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>scan</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><span class="link-target"> [https://docs.python.org/3/library/stdtypes.html#str]</span>) -- Scan string</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="securefile.secureserial.ScanResult.des_key">
+<code class="descclassname">ScanResult.</code><code class="descname">des_key</code><em class="property"> = 'des_key'</em></dt>
+<dd><p>DES key value</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="securefile.secureserial.ScanResult.aes_key">
+<code class="descclassname">ScanResult.</code><code class="descname">aes_key</code><em class="property"> = 'aes_key'</em></dt>
+<dd><p>AES key value</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="securefile.secureserial.ScanResult.rsa_tuple">
+<code class="descclassname">ScanResult.</code><code class="descname">rsa_tuple</code><em class="property"> = (0, 0)</em></dt>
+<dd><p>RSA key values as tuple.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="securefile.secureserial.ScanResult.shift">
+<code class="descclassname">ScanResult.</code><code class="descname">shift</code><em class="property"> = 0</em></dt>
+<dd><p>Shift value for ceser cipher</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

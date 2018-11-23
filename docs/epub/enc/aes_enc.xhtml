@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>Encrypt.aes_encrypt</title>
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" /> 
+  </head><body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="encrypt-aes-encrypt">
+<h1>Encrypt.aes_encrypt</h1>
+<dl class="function">
+<dt id="securefile.Encrypt.aes_encrypt">
+<code class="descclassname">securefile.Encrypt.</code><code class="descname">aes_encrypt</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Encrypt a plain text with AES algorithm.
+( <a class="reference internal" href="../aes_algorithm.xhtml#module-securefile.aes_algorithm" title="securefile.aes_algorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">aes_algorithm</span></code></a> )</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">securefile</span> <span class="k">import</span> <span class="n">Encrypt</span>
+<span class="kn">from</span> <span class="nn">securefile.keyset</span> <span class="k">import</span> <span class="n">AES_KEY</span>
+<span class="n">aes_key</span> <span class="o">=</span> <span class="n">AES_KEY</span><span class="o">.</span><span class="n">genrate</span><span class="p">(</span><span class="s1">&#39;700102030405060708090a0b0c0d0e0f&#39;</span><span class="p">)</span>
+<span class="n">enc</span> <span class="o">=</span> <span class="n">Encrypt</span><span class="p">(</span><span class="s1">&#39;test.txt&#39;</span><span class="p">)</span>
+<span class="n">enc</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
+<span class="n">enc</span><span class="o">.</span><span class="n">aes_encrypt</span><span class="p">(</span><span class="n">aes_key</span><span class="p">)</span>
+<span class="n">enc</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<a class="reference internal" href="../keyset/aes.xhtml#securefile.keyset.AES_KEY" title="securefile.keyset.AES_KEY"><em>AES_KEY</em></a>) -- Encryption key.</p></li>
+<li><p><strong>commit=False</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a><span class="link-target"> [https://docs.python.org/3/library/functions.html#bool]</span>) -- Save the change or not.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Encrypted Message or Cipher Text.</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IndexError" title="(in Python v3.7)"><strong>IndexError</strong></a><span class="link-target"> [https://docs.python.org/3/library/exceptions.html#IndexError]</span> -- Word size too large to encrypt with AES algorithm.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.7)"><strong>ValueError</strong></a><span class="link-target"> [https://docs.python.org/3/library/exceptions.html#ValueError]</span> -- No a formetted text</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Most sutable after RSA or DES Algorithm</p>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

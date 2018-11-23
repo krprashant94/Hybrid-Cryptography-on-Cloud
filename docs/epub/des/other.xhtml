@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>Support Functions</title>
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" /> 
+  </head><body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="support-functions">
+<h1>Support Functions</h1>
+<div class="section" id="securefile-aes-algorithm-des">
+<h2>securefile.aes_algorithm.DES</h2>
+<dl class="function">
+<dt id="securefile.des_algorithm.DES.add_padding">
+<code class="descclassname">securefile.des_algorithm.DES.</code><code class="descname">add_padding</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span></dt>
+<dd><p>Add padding to the datas using PKCS5 spec.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.des_algorithm.DES.expand">
+<code class="descclassname">securefile.des_algorithm.DES.</code><code class="descname">expand</code><span class="sig-paren">(</span><em>self</em>, <em>block</em>, <em>table</em><span class="sig-paren">)</span></dt>
+<dd><p>Do the exact same thing than permut but for more clarity has been renamed</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>block</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a><span class="link-target"> [https://docs.python.org/3/library/functions.html#int]</span>) -- Blocks</p></li>
+<li><p><strong>table</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a><span class="link-target"> [https://docs.python.org/3/library/stdtypes.html#list]</span>) -- table</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>permuted list.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.des_algorithm.DES.generatekeys">
+<code class="descclassname">securefile.des_algorithm.DES.</code><code class="descname">generatekeys</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span></dt>
+<dd><p>Algorithm that generates all the keys</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.des_algorithm.DES.permut">
+<code class="descclassname">securefile.des_algorithm.DES.</code><code class="descname">permut</code><span class="sig-paren">(</span><em>self</em>, <em>block</em>, <em>table</em><span class="sig-paren">)</span></dt>
+<dd><p>Permut the given block using the given table (so generic method).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>block</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a><span class="link-target"> [https://docs.python.org/3/library/functions.html#int]</span>) -- Blocks</p></li>
+<li><p><strong>table</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a><span class="link-target"> [https://docs.python.org/3/library/stdtypes.html#list]</span>) -- table</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>permuted list.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.des_algorithm.DES.remove_padding">
+<code class="descclassname">securefile.des_algorithm.DES.</code><code class="descname">remove_padding</code><span class="sig-paren">(</span><em>self</em>, <em>data</em><span class="sig-paren">)</span></dt>
+<dd><p>Remove the padding of the plain text (it assume there is padding)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.des_algorithm.DES.shift">
+<code class="descclassname">securefile.des_algorithm.DES.</code><code class="descname">shift</code><span class="sig-paren">(</span><em>self</em>, <em>g_s</em>, <em>d_s</em>, <em>n_s</em><span class="sig-paren">)</span></dt>
+<dd><p>Shift a list of the given value</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.des_algorithm.DES.substitute">
+<code class="descclassname">securefile.des_algorithm.DES.</code><code class="descname">substitute</code><span class="sig-paren">(</span><em>self</em>, <em>d_e</em><span class="sig-paren">)</span></dt>
+<dd><p>Substitute bytes using SBOX.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>d_e</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a><span class="link-target"> [https://docs.python.org/3/library/stdtypes.html#list]</span>) -- n bit array.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>subtitute array.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.des_algorithm.DES.xor">
+<code class="descclassname">securefile.des_algorithm.DES.</code><code class="descname">xor</code><span class="sig-paren">(</span><em>self</em>, <em>logic_t1</em>, <em>logic_t2</em><span class="sig-paren">)</span></dt>
+<dd><p>Apply a xor and return the resulting list</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

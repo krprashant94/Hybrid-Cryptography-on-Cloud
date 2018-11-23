@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>Support Functions</title>
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" /> 
+  </head><body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="support-functions">
+<h1>Support Functions</h1>
+<div class="section" id="securefile-aes-algorithm-rsa">
+<h2>securefile.aes_algorithm.RSA</h2>
+<dl class="function">
+<dt id="securefile.rsa_algorithm.RSA.gcd">
+<code class="descclassname">securefile.rsa_algorithm.RSA.</code><code class="descname">gcd</code><span class="sig-paren">(</span><em>a</em>, <em>b</em><span class="sig-paren">)</span></dt>
+<dd><p>Euclid's algorithm for determining the greatest common divisor
+Use iteration to make it faster for larger integers</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.rsa_algorithm.RSA.is_prime">
+<code class="descclassname">securefile.rsa_algorithm.RSA.</code><code class="descname">is_prime</code><span class="sig-paren">(</span><em>num</em><span class="sig-paren">)</span></dt>
+<dd><p>Tests to see if a number is prime</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.rsa_algorithm.RSA.multiplicative_inverse">
+<code class="descclassname">securefile.rsa_algorithm.RSA.</code><code class="descname">multiplicative_inverse</code><span class="sig-paren">(</span><em>a</em>, <em>b</em><span class="sig-paren">)</span></dt>
+<dd><p>Euclid's extended algorithm for finding the multiplicative inverse of two numbers
+Returns a tuple (r, i, j) such that</p>
+<div class="math notranslate nohighlight">
+\[r = gcd(a, b) = ia + jb\]</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> <span class="n">i</span> <span class="o">=</span> <span class="n">multiplicitive</span> <span class="n">inverse</span> <span class="n">of</span> <span class="n">a</span> <span class="n">mod</span> <span class="n">b</span>
+     <span class="ow">or</span>      <span class="n">j</span> <span class="o">=</span> <span class="n">multiplicitive</span> <span class="n">inverse</span> <span class="n">of</span> <span class="n">b</span> <span class="n">mod</span> <span class="n">a</span>
+</pre></div>
+</div>
+<p>Neg return values for i or j are made positive mod b or a respectively
+Iterateive Version is faster and uses much less stack space</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

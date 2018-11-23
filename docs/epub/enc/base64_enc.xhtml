@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>Encrypt.base64_encrypt</title>
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" /> 
+  </head><body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="encrypt-base64-encrypt">
+<h1>Encrypt.base64_encrypt</h1>
+<dl class="function">
+<dt id="securefile.Encrypt.base64_encrypt">
+<code class="descclassname">securefile.Encrypt.</code><code class="descname">base64_encrypt</code><span class="sig-paren">(</span><em>self</em>, <em>commit=False</em><span class="sig-paren">)</span></dt>
+<dd><p>Base64 encoding schemes are commonly used when there is a need to
+encode binary data that needs be stored and transferred over
+media that are designed to deal with textual data.
+This is to ensure that the data remains intact without modification
+during transport.</p>
+<dl class="simple">
+<dt>Uses:</dt>
+<dd><p>Encrypt a plain text into cipher text using b64encode.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">securefile</span> <span class="k">import</span> <span class="n">Encrypt</span>
+<span class="n">enc</span> <span class="o">=</span> <span class="n">Encrypt</span><span class="p">(</span><span class="s1">&#39;list_count.txt&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+<span class="n">enc</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
+<span class="n">enc</span><span class="o">.</span><span class="n">base64_encrypt</span><span class="p">()</span>
+<span class="n">enc</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>commit=False</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a><span class="link-target"> [https://docs.python.org/3/library/functions.html#bool]</span>) -- Save the change or not.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Encrypted Message or Cipher Text.</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

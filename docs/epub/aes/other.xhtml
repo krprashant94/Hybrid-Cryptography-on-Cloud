@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>Support Functions</title>
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" /> 
+  </head><body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="support-functions">
+<h1>Support Functions</h1>
+<div class="section" id="securefile-aes-algorithm-aes">
+<h2>securefile.aes_algorithm.AES</h2>
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.Cipher">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">Cipher</code><span class="sig-paren">(</span><em>self</em>, <em>expandedKey</em>, <em>data</em><span class="sig-paren">)</span></dt>
+<dd><p>At the start of the Cipher, the input is copied to the
+State Matrix. After an initial Round Key addition, the
+State Matrix is transformed by implementing a round function
+10, 12, or 14 times (depending on the key length), with the final
+round differing slightly from the first Nr -1 rounds. The final
+State Matrix is then copied as the output.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>expandedKey</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a><span class="link-target"> [https://docs.python.org/3/library/stdtypes.html#list]</span>) -- The expanded key schedule</p></li>
+<li><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><span class="link-target"> [https://docs.python.org/3/library/stdtypes.html#str]</span>) -- Hex string to encrypt</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Encrypted data as a Hex string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.InvCipher">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">InvCipher</code><span class="sig-paren">(</span><em>self</em>, <em>expandedKey</em>, <em>data</em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.ExpandKey">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">ExpandKey</code><span class="sig-paren">(</span><em>self</em>, <em>key</em><span class="sig-paren">)</span></dt>
+<dd><p>Takes the Cipher Key and performs a Key Expansion routine to
+generate a key schedule thus generating a total of Nb (Nr + 1) words.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><span class="link-target"> [https://docs.python.org/3/library/stdtypes.html#str]</span>) -- 128, 192, 256 bit Cipher Key</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Expanded Cipher Keys</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.MixColumns">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">MixColumns</code><span class="sig-paren">(</span><em>self</em>, <em>state</em>, <em>isInv</em><span class="sig-paren">)</span></dt>
+<dd><p>Operates on the State column-by-column, treating each column as
+a four-term polynomial. The columns are considered as polynomials
+over GF(2^8) and multiplied modulo x^4 + 1 with a fixed polynomial a(x).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>state</strong> -- State Matrix input</p></li>
+<li><p><strong>isInv</strong> -- Encrypt or decrypt mode</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.AddRoundKey">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">AddRoundKey</code><span class="sig-paren">(</span><em>state</em>, <em>key</em><span class="sig-paren">)</span></dt>
+<dd><p>Round Key is added to the State using an XOR operation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>state</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a><span class="link-target"> [https://docs.python.org/3/library/stdtypes.html#list]</span>) -- State Matrix</p></li>
+<li><p><strong>key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a><span class="link-target"> [https://docs.python.org/3/library/stdtypes.html#list]</span>) -- Round Key</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Hex values of XOR operation</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.RevertStateMatrix">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">RevertStateMatrix</code><span class="sig-paren">(</span><em>state</em><span class="sig-paren">)</span></dt>
+<dd><p>Reverts State Matrix format as str</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>state</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a><span class="link-target"> [https://docs.python.org/3/library/stdtypes.html#list]</span>) -- Final State Matrix</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Reverted State Matrix</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.RotWord">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">RotWord</code><span class="sig-paren">(</span><em>word</em><span class="sig-paren">)</span></dt>
+<dd><p>Takes a word [a0, a1, a2, a3] as input and perform a
+cyclic permutation that returns the word [a1, a2, a3, a0].</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>word</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><span class="link-target"> [https://docs.python.org/3/library/stdtypes.html#str]</span>) -- Row within State Matrix</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Circular byte left shift</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.ShiftRows">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">ShiftRows</code><span class="sig-paren">(</span><em>self</em>, <em>state</em>, <em>isInv</em><span class="sig-paren">)</span></dt>
+<dd><p>Changes the State by cyclically shifting the last
+three rows of the State by different offsets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>state</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a><span class="link-target"> [https://docs.python.org/3/library/stdtypes.html#list]</span>) -- State Matrix</p></li>
+<li><p><strong>isInv</strong> -- Encrypt or Decrypt</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Shifted state by offsets [0, 1, 2, 3]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.StateMatrix">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">StateMatrix</code><span class="sig-paren">(</span><em>state</em><span class="sig-paren">)</span></dt>
+<dd><p>Formats a State Matrix str to a properly formatted list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>state</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><span class="link-target"> [https://docs.python.org/3/library/stdtypes.html#str]</span>) -- String State Matrix</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Formatted State Matrix</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.SubBytes">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">SubBytes</code><span class="sig-paren">(</span><em>self</em>, <em>state</em>, <em>isInv</em><span class="sig-paren">)</span></dt>
+<dd><p>Transforms the State Matrix using a nonlinear byte S-box
+that operates on each of the State bytes independently.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>state</strong> -- State matrix input</p></li>
+<li><p><strong>isInv</strong> -- Encrypt or decrypt mode</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Byte substitution from the state matrix</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.SubWord">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">SubWord</code><span class="sig-paren">(</span><em>self</em>, <em>byte</em><span class="sig-paren">)</span></dt>
+<dd><p>Key Expansion routine that takes a four-byte
+input word and applies an S-box substitution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>byte</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a><span class="link-target"> [https://docs.python.org/3/library/functions.html#int]</span>) -- Output from the circular byte left shift</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Substituted bytes through sbox</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.cbc">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">cbc</code><span class="sig-paren">(</span><em>self</em>, <em>data</em>, <em>expanded_key</em>, <em>isInv</em><span class="sig-paren">)</span></dt>
+<dd><p>CBC mode:
+In CBC mode, each block of plaintext is XORed with the
+previous ciphertext block before being encrypted.</p>
+<dl class="simple">
+<dt>Denoted as:</dt>
+<dd><p>Encryption: Ci = Ek(Pi xor C(i-1)) and C0 = IV
+Decryption: Pi = Dk(Ci) xor C(i-1) and C0 = IV</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> -- Data to be encrypted (type defined by input type)</p></li>
+<li><p><strong>expanded_key</strong> -- The AES expanded key set</p></li>
+<li><p><strong>isInv</strong> -- </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Data as string or binary data (defined by output type)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.ecb">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">ecb</code><span class="sig-paren">(</span><em>self</em>, <em>data</em>, <em>expanded_key</em>, <em>isInv</em><span class="sig-paren">)</span></dt>
+<dd><p>ECB mode:
+The simplest of the encrypt modes is the Electronic
+Codebook (ECB) mode. The message is divided into blocks,
+and each block is encrypted separately.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>isInv</strong> -- </p></li>
+<li><p><strong>data</strong> -- Data to be encrypted (type defined by input type)</p></li>
+<li><p><strong>expanded_key</strong> -- The AES expanded key set</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Data as string or binary data (defined by output type)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.galois">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">galois</code><span class="sig-paren">(</span><em>a</em>, <em>b</em><span class="sig-paren">)</span></dt>
+<dd><p>Galois multiplication of 8 bit characters a and b</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> -- State Matrix col or row</p></li>
+<li><p><strong>b</strong> -- Fixed number</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Galois field GF(2^8)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.key_handler">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">key_handler</code><span class="sig-paren">(</span><em>self</em>, <em>key</em>, <em>isInv</em><span class="sig-paren">)</span></dt>
+<dd><p>Gets the key length and sets Nb, Nk, Nr accordingly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><span class="link-target"> [https://docs.python.org/3/library/stdtypes.html#str]</span>) -- 128, 192, 256 bit Cipher Key</p></li>
+<li><p><strong>isInv</strong> -- Encrypt or decrypt mode</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Expanded Cipher Keys</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.pad">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">pad</code><span class="sig-paren">(</span><em>data</em>, <em>block=16</em><span class="sig-paren">)</span></dt>
+<dd><p>Padding method for data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> -- Data to pad</p></li>
+<li><p><strong>block</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a><span class="link-target"> [https://docs.python.org/3/library/functions.html#int]</span>) -- Block size</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Padded data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.unblock">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">unblock</code><span class="sig-paren">(</span><em>data</em>, <em>size=16</em><span class="sig-paren">)</span></dt>
+<dd><p>Unblock binary data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.7)"><em>bytes</em></a><span class="link-target"> [https://docs.python.org/3/library/stdtypes.html#bytes]</span>) -- Binary data to split into blocks</p></li>
+<li><p><strong>size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a><span class="link-target"> [https://docs.python.org/3/library/functions.html#int]</span>) -- Block size</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Blocked binary data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.unpad">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">unpad</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span></dt>
+<dd><p>Un-Padding for data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> -- Data to be un-padded</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Data with removed padding</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="securefile.aes_algorithm.AES.xor">
+<code class="descclassname">securefile.aes_algorithm.AES.</code><code class="descname">xor</code><span class="sig-paren">(</span><em>first</em>, <em>last</em><span class="sig-paren">)</span></dt>
+<dd><p>Xor method for CBC usage</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>first</strong> -- first encrypted block</p></li>
+<li><p><strong>last</strong> -- last encrypted block</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Xor output of two blocks</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

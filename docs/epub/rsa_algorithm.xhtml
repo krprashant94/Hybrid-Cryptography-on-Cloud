@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>RSA Algorithm Module</title>
+    <link rel="stylesheet" href="_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" /> 
+  </head><body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-securefile.rsa_algorithm">
+<span id="rsa-algorithm-module"></span><h1>RSA Algorithm Module</h1>
+<div class="section" id="rsa-algorithm">
+<h2>RSA Algorithm</h2>
+<p>RSA algorithm is a public key encryption technique and is considered as the
+most secure way of encryption.</p>
+<p>RSA algorithm is asymmetric cryptography algorithm.
+Asymmetric actually means that it works on two different keys
+i.e. Public Key and Private Key.
+As the name describes that the Public Key is given to everyone
+and Private key is kept private.</p>
+<p>The idea of RSA is based on the fact that it is difficult to
+factorize a large integer. The public key consists of two
+numbers where one number is multiplication of two large
+prime numbers. And private key is also derived from the same
+two prime numbers. So if somebody can factorize the large number,
+the private key is compromised. Therefore encryption strength
+totally lies on the key size and if we double or triple the
+key size, the strength of encryption increases exponentially.
+RSA keys can be typically 1024 or 2048 bits long,
+but experts believe that 1024 bit keys could be broken in the
+near future. But till now it seems to be an infeasible task.</p>
+<p>It was invented by Rivest, Shamir and Adleman
+in year 1978 and hence name RSA algorithm.</p>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Module Class:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="rsa/rsa.xhtml">RSA Class</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rsa/encrypt.xhtml">securefile.rsa_algorithm.RSA.encrypt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rsa/decrypt.xhtml">securefile.rsa_algorithm.RSA.decrypt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rsa/other.xhtml">Support Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

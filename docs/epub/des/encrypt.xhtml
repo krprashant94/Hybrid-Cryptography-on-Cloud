@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>securefile.des_algorithm.DES.encrypt</title>
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" /> 
+  </head><body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="securefile-des-algorithm-des-encrypt">
+<h1>securefile.des_algorithm.DES.encrypt</h1>
+<dl class="function">
+<dt id="securefile.des_algorithm.DES.encrypt">
+<code class="descclassname">securefile.des_algorithm.DES.</code><code class="descname">encrypt</code><span class="sig-paren">(</span><em>self</em>, <em>key</em>, <em>text</em><span class="sig-paren">)</span></dt>
+<dd><p>Encrypt a text with DES algorithm</p>
+<dl>
+<dt>Example:</dt>
+<dd><p>Example use may depends upon <code class="docutils literal notranslate"><span class="pre">`package</span> <span class="pre">import`</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">securefile.des_algorithm</span> <span class="k">as</span> <span class="nn">des_algo</span>
+<span class="n">cipher_text</span> <span class="o">=</span> <span class="n">des_algo</span><span class="o">.</span><span class="n">encrypt</span><span class="p">(</span><span class="n">key</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="n">plain_text</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><span class="link-target"> [https://docs.python.org/3/library/stdtypes.html#str]</span>) -- Encryption key.</p></li>
+<li><p><strong>text</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><span class="link-target"> [https://docs.python.org/3/library/stdtypes.html#str]</span>) -- Plain Text.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Encrypted Message or Cipher Text.</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.7)"><strong>ValueError</strong></a><span class="link-target"> [https://docs.python.org/3/library/exceptions.html#ValueError]</span> -- Key Should be 8 bytes long</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.7)"><strong>ValueError</strong></a><span class="link-target"> [https://docs.python.org/3/library/exceptions.html#ValueError]</span> -- Data size should be multiple of 8</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

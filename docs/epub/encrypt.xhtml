@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>Encrypt Class</title>
+    <link rel="stylesheet" href="_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" /> 
+  </head><body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="encrypt-class">
+<h1>Encrypt Class</h1>
+<dl class="class">
+<dt id="securefile.Encrypt">
+<em class="property">class </em><code class="descclassname">securefile.</code><code class="descname">Encrypt</code><span class="sig-paren">(</span><em>file_name</em>, <em>delimiter=':'</em><span class="sig-paren">)</span></dt>
+<dd><p>Encrypt is the center class for all the module it is a wrapper class for
+all encryption and decryption algorithm.</p>
+<p>Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">securefile</span> <span class="k">import</span> <span class="n">Encrypt</span>
+<span class="n">enc</span> <span class="o">=</span> <span class="n">Encrypt</span><span class="p">(</span><span class="s1">&#39;test.md&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Special Method</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#securefile.Encrypt.__init__" title="securefile.Encrypt.__init__"><code class="xref py py-class docutils literal notranslate"><span class="pre">__init__()</span></code></a></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">__open_check()</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Method</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="enc/open.xhtml#securefile.Encrypt.open" title="securefile.Encrypt.open"><code class="xref py py-class docutils literal notranslate"><span class="pre">open()</span></code></a></p></li>
+<li><p><a class="reference internal" href="enc/close.xhtml#securefile.Encrypt.close" title="securefile.Encrypt.close"><code class="xref py py-class docutils literal notranslate"><span class="pre">close()</span></code></a></p></li>
+<li><p><a class="reference internal" href="enc/create.xhtml#securefile.Encrypt.create" title="securefile.Encrypt.create"><code class="xref py py-class docutils literal notranslate"><span class="pre">create()</span></code></a></p></li>
+<li><p><a class="reference internal" href="enc/commit.xhtml#securefile.Encrypt.commit" title="securefile.Encrypt.commit"><code class="xref py py-class docutils literal notranslate"><span class="pre">commit()</span></code></a></p></li>
+<li><p><a class="reference internal" href="enc/des_enc.xhtml#securefile.Encrypt.des_encrypt" title="securefile.Encrypt.des_encrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">des_encrypt()</span></code></a></p></li>
+<li><p><a class="reference internal" href="enc/des_dec.xhtml#securefile.Encrypt.des_decrypt" title="securefile.Encrypt.des_decrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">des_decrypt()</span></code></a></p></li>
+<li><p><a class="reference internal" href="enc/caesar_cipher.xhtml#securefile.Encrypt.caesar_cipher" title="securefile.Encrypt.caesar_cipher"><code class="xref py py-class docutils literal notranslate"><span class="pre">caesar_cipher()</span></code></a></p></li>
+<li><p><a class="reference internal" href="enc/caesar_decipher.xhtml#securefile.Encrypt.caesar_decipher" title="securefile.Encrypt.caesar_decipher"><code class="xref py py-class docutils literal notranslate"><span class="pre">caesar_decipher()</span></code></a></p></li>
+<li><p><a class="reference internal" href="enc/rsa_enc.xhtml#securefile.Encrypt.rsa_encrypt" title="securefile.Encrypt.rsa_encrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">rsa_encrypt()</span></code></a></p></li>
+<li><p><a class="reference internal" href="enc/rsa_dec.xhtml#securefile.Encrypt.rsa_decrypt" title="securefile.Encrypt.rsa_decrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">rsa_decrypt()</span></code></a></p></li>
+<li><p><a class="reference internal" href="enc/aes_enc.xhtml#securefile.Encrypt.aes_encrypt" title="securefile.Encrypt.aes_encrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">aes_encrypt()</span></code></a></p></li>
+<li><p><a class="reference internal" href="enc/aes_dec.xhtml#securefile.Encrypt.aes_decrypt" title="securefile.Encrypt.aes_decrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">aes_decrypt()</span></code></a></p></li>
+<li><p><a class="reference internal" href="enc/base64_enc.xhtml#securefile.Encrypt.base64_encrypt" title="securefile.Encrypt.base64_encrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">base64_encrypt()</span></code></a></p></li>
+<li><p><a class="reference internal" href="enc/base64_dec.xhtml#securefile.Encrypt.base64_decrypt" title="securefile.Encrypt.base64_decrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">base64_decrypt()</span></code></a></p></li>
+<li><p><a class="reference internal" href="enc/get_text.xhtml#securefile.Encrypt.get_text" title="securefile.Encrypt.get_text"><code class="xref py py-class docutils literal notranslate"><span class="pre">get_text()</span></code></a></p></li>
+</ul>
+</dd>
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>__file_name</p></li>
+<li><p>__plain_text</p></li>
+<li><p>__open_flag</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="securefile.Encrypt.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>file_name</em>, <em>delimiter=':'</em><span class="sig-paren">)</span></dt>
+<dd><p>Encrypt class object takes two argument</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><span class="link-target"> [https://docs.python.org/3/library/stdtypes.html#str]</span>) – file name with path that is going to encrypted or decrypted.</p></li>
+<li><p><strong>delimiter=':'</strong> (<em>chr</em>) – delimiter used to pack/split the bytes of file.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Methods:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enc/open.xhtml">Encrypt.open</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enc/close.xhtml">Encrypt.close</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enc/create.xhtml">Encrypt.create</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enc/commit.xhtml">Encrypt.commit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enc/des_enc.xhtml">Encrypt.des_encrypt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enc/des_dec.xhtml">Encrypt.des_decrypt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enc/caesar_cipher.xhtml">Encrypt.caesar_cipher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enc/caesar_decipher.xhtml">Encrypt.caesar_decipher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enc/rsa_enc.xhtml">Encrypt.rsa_encrypt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enc/rsa_dec.xhtml">Encrypt.rsa_decrypt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enc/aes_enc.xhtml">Encrypt.aes_encrypt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enc/aes_dec.xhtml">Encrypt.aes_decrypt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enc/base64_enc.xhtml">Encrypt.base64_encrypt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enc/base64_dec.xhtml">Encrypt.base64_decrypt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enc/get_text.xhtml">Encrypt.get_text</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

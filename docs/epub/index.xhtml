@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>Secure File Encryption Algorithm</title>
+    <link rel="stylesheet" href="_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" /> 
+  </head><body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="secure-file-encryption-algorithm">
+<h1>Secure File Encryption Algorithm</h1>
+<img alt="_images/banner.png" src="_images/banner.png" />
+<span class="target" id="module-securefile"></span><div class="section" id="securefile">
+<h2>SecureFile</h2>
+<p>A python package for hybrid file encryption and decryption. <strong>securefile</strong> is
+for n-layer file encryption. This package provides a basic two-way encryption
+algorithm for a file. It supports approximately all kind of file encoding.
+The package provides RSA, DES, AES and Shift Cipher and base64
+algorithm for file encoding and decoding.</p>
+<p>transmitting sensitive data over a public channel is quite insecure. to secure
+the data over public channel we need to encrypt the data. So that no third
+party can access that information. It may be possible that encrypting with one
+algorithm can be decoded by reverse engineering. But, using n-layer of the
+different algorithm, makes it more secure and decoding such kind of ciphertext
+with reverse engineering will take approximately unpractical time for a
+supercomputer also.</p>
+<dl>
+<dt><strong>Dependency</strong>:</dt>
+<dd><ul>
+<li><dl>
+<dt>pyserial</dt>
+<dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">pyserial</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+<dl class="simple">
+<dt>Native :</dt>
+<dd><ul class="simple">
+<li><p>base64</p></li>
+<li><p>random</p></li>
+<li><p>binascii</p></li>
+<li><p>re</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt><strong>Installation</strong>:</dt>
+<dd><dl>
+<dt>To install this package with pip command type</dt>
+<dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pip</span> <span class="n">install</span> <span class="n">securefile</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd>
+<dt><strong>Module Structure</strong>:</dt>
+<dd><div class="graphviz"><img src="_images/graphviz-38ff6f31ab8fc8b417c3cb2df19487a511dfff2d.png" alt="digraph foo {
+    &quot;Securefile Module&quot; -&gt; &quot;DES Algorithm&quot;
+    &quot;Securefile Module&quot; -&gt; &quot;RSA Algorithm&quot;
+    &quot;Securefile Module&quot; -&gt; &quot;AES Algorithm&quot;
+    &quot;Securefile Module&quot; -&gt; &quot;    Keyset   &quot;
+    &quot;Securefile Module&quot; -&gt; &quot;Secure Serial&quot;
+
+    &quot;Securefile Module&quot;[shape=ractangle]
+    &quot;AES Algorithm&quot;[shape=ractangle]
+    &quot;DES Algorithm&quot;[shape=ractangle]
+    &quot;RSA Algorithm&quot;[shape=ractangle]
+    &quot;    Keyset   &quot;[shape=ractangle]
+    &quot;Secure Serial&quot;[shape=ractangle]
+}" class="graphviz" /></div>
+</dd>
+</dl>
+<p><strong>Uses</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">securefile</span> <span class="k">import</span> <span class="n">Encrypt</span>
+<span class="kn">from</span> <span class="nn">securefile.keyset</span> <span class="k">import</span> <span class="n">RSA_KEY</span><span class="p">,</span> <span class="n">DES_KEY</span><span class="p">,</span> <span class="n">AES_KEY</span>
+
+<span class="n">des_key</span> <span class="o">=</span> <span class="n">DES_KEY</span><span class="o">.</span><span class="n">genrate</span><span class="p">(</span><span class="s1">&#39;12345678123456781234567812345678&#39;</span><span class="p">)</span>
+<span class="n">aes_key</span> <span class="o">=</span> <span class="n">AES_KEY</span><span class="o">.</span><span class="n">genrate</span><span class="p">(</span><span class="s1">&#39;700102030405060708090a0b0c0d0e0f&#39;</span><span class="p">)</span>
+<span class="n">rsa_public_key</span> <span class="o">=</span> <span class="n">RSA_KEY</span><span class="o">.</span><span class="n">public_key_genrate</span><span class="p">(</span><span class="mi">18285</span><span class="p">,</span> <span class="mi">57067</span><span class="p">)</span>
+<span class="n">rsa_private_key</span> <span class="o">=</span> <span class="n">RSA_KEY</span><span class="o">.</span><span class="n">private_key_genrate</span><span class="p">(</span><span class="mi">6861</span><span class="p">,</span> <span class="mi">57067</span><span class="p">)</span>
+<span class="n">chiper_shift</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">enc</span> <span class="o">=</span> <span class="n">Encrypt</span><span class="p">(</span><span class="s1">&#39;test.txt&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">enc</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
+
+<span class="n">enc</span><span class="o">.</span><span class="n">base64_encrypt</span><span class="p">()</span>
+<span class="n">enc</span><span class="o">.</span><span class="n">aes_encrypt</span><span class="p">(</span><span class="n">aes_key</span><span class="p">,</span> <span class="n">commit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">enc</span><span class="o">.</span><span class="n">des_encrypt</span><span class="p">(</span><span class="n">des_key</span><span class="p">,</span> <span class="n">commit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">enc</span><span class="o">.</span><span class="n">rsa_encrypt</span><span class="p">(</span><span class="n">rsa_private_key</span><span class="p">,</span> <span class="n">commit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">enc</span><span class="o">.</span><span class="n">caesar_cipher</span><span class="p">(</span><span class="n">key_shift</span><span class="o">=</span><span class="n">chiper_shift</span><span class="p">,</span> <span class="n">commit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">enc</span><span class="o">.</span><span class="n">caesar_decipher</span><span class="p">(</span><span class="n">key_shift</span><span class="o">=</span><span class="n">chiper_shift</span><span class="p">,</span> <span class="n">commit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">enc</span><span class="o">.</span><span class="n">rsa_decrypt</span><span class="p">(</span><span class="n">rsa_public_key</span><span class="p">,</span> <span class="n">commit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">enc</span><span class="o">.</span><span class="n">des_decrypt</span><span class="p">(</span><span class="n">des_key</span><span class="p">,</span> <span class="n">commit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">enc</span><span class="o">.</span><span class="n">aes_decrypt</span><span class="p">(</span><span class="n">aes_key</span><span class="p">,</span> <span class="n">commit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">enc</span><span class="o">.</span><span class="n">base64_decrypt</span><span class="p">(</span><span class="n">commit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encrypt.xhtml">Encrypt Class</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enc/open.xhtml">Encrypt.open</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enc/close.xhtml">Encrypt.close</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enc/create.xhtml">Encrypt.create</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enc/commit.xhtml">Encrypt.commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enc/des_enc.xhtml">Encrypt.des_encrypt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enc/des_dec.xhtml">Encrypt.des_decrypt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enc/caesar_cipher.xhtml">Encrypt.caesar_cipher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enc/caesar_decipher.xhtml">Encrypt.caesar_decipher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enc/rsa_enc.xhtml">Encrypt.rsa_encrypt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enc/rsa_dec.xhtml">Encrypt.rsa_decrypt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enc/aes_enc.xhtml">Encrypt.aes_encrypt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enc/aes_dec.xhtml">Encrypt.aes_decrypt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enc/base64_enc.xhtml">Encrypt.base64_encrypt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enc/base64_dec.xhtml">Encrypt.base64_decrypt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enc/get_text.xhtml">Encrypt.get_text</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rsa_algorithm.xhtml">RSA Algorithm Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rsa_algorithm.xhtml#rsa-algorithm">RSA Algorithm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rsa/rsa.xhtml">RSA Class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rsa/encrypt.xhtml">securefile.rsa_algorithm.RSA.encrypt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rsa/decrypt.xhtml">securefile.rsa_algorithm.RSA.decrypt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rsa/other.xhtml">Support Functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aes_algorithm.xhtml">AES Algorithm Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="aes_algorithm.xhtml#advanced-encryption-standard-aes-algorithm">Advanced Encryption Standard (AES) Algorithm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aes/aes.xhtml">AES Class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aes/encrypt.xhtml">securefile.rsa_algorithm.RSA.encrypt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aes/decrypt.xhtml">securefile.rsa_algorithm.RSA.decrypt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aes/other.xhtml">Support Functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="des_algorithm.xhtml">DES Algorithm Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="des_algorithm.xhtml#data-encryption-standard-des-algorithm">Data Encryption Standard (DES) Algorithm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="des/des.xhtml">DES Algorithm Class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="des/encrypt.xhtml">securefile.des_algorithm.DES.encrypt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="des/decrypt.xhtml">securefile.des_algorithm.DES.decrypt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="des/other.xhtml">Support Functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="keyset.xhtml">Keyset Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="keyset.xhtml#keyset">keyset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="keyset/rsa.xhtml">RSA Key Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="keyset/des.xhtml">DES Key Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="keyset/aes.xhtml">AES Key Class</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="secureserial.xhtml">Secure Serial Modeule</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="secureserial.xhtml#serial-module">Serial Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial/serial.xhtml">Serial Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serial/scansesult.xhtml">Scanresult</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables</h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.xhtml"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.xhtml"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.xhtml"><span class="std std-ref">Search Page</span></a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/modules.html#modules" title="(in Python v3.7)"><span>Importing Modules</span></a><span class="link-target"> [https://docs.python.org/3/library/modules.html#modules]</span></p></li>
+</ul>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

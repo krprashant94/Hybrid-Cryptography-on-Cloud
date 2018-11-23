@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>AES Key Class</title>
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" /> 
+  </head><body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="aes-key-class">
+<h1>AES Key Class</h1>
+<dl class="class">
+<dt id="securefile.keyset.AES_KEY">
+<em class="property">class </em><code class="descclassname">securefile.keyset.</code><code class="descname">AES_KEY</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span></dt>
+<dd><p>Advanced Encryption Standard (AES) Algorithm key object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Method</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#securefile.keyset.AES_KEY.genrate" title="securefile.keyset.AES_KEY.genrate"><code class="xref py py-class docutils literal notranslate"><span class="pre">genrate()</span></code></a></p>
+</dd>
+<dt class="field-even">Attributes</dt>
+<dd class="field-even"><p>key</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="securefile.keyset.AES_KEY.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><span class="link-target"> [https://docs.python.org/3/library/stdtypes.html#str]</span>) -- Key string</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="securefile.keyset.AES_KEY.genrate">
+<em class="property">static </em><code class="descname">genrate</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span></dt>
+<dd><p>Genrate the AES key object.</p>
+<p>Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aes_key</span> <span class="o">=</span> <span class="n">AES_KEY</span><span class="o">.</span><span class="n">genrate</span><span class="p">(</span><span class="s1">&#39;700102030405060708090a0b0c0d0e0f&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><span class="link-target"> [https://docs.python.org/3/library/stdtypes.html#str]</span>) -- key string</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference internal" href="#securefile.keyset.AES_KEY" title="securefile.keyset.AES_KEY"><code class="xref py py-class docutils literal notranslate"><span class="pre">AES_KEY</span></code></a> Key object</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.7)"><strong>ValueError</strong></a><span class="link-target"> [https://docs.python.org/3/library/exceptions.html#ValueError]</span> -- AES key must be 128-bit(32 char), 192-bit(48 char) or 256-bit(64 char)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>
