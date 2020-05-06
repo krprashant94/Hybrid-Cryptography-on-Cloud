@@ -107,6 +107,8 @@ venv.bak/
 /site
 
 # mypy
+documentation/
 .mypy_cache/
 .dmypy.json
 dmypy.json
+*.psd
